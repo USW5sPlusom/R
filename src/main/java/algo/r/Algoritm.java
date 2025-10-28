@@ -42,9 +42,7 @@ public class Algoritm {
     }
 
     //Сеттеры
-    public void setId(long id){
-        this.id = id;
-    }
+    public void setId(long id){ this.id = id; }
     public void setName(String name){
         this.name = name;
     }
@@ -58,10 +56,20 @@ public class Algoritm {
         this.codeExample = codeExample;
     }
 
-    //TODO олноценный тустринг
+
+    //
+    public String ToString(long id,  String name, String category, String content, String codeExample){
+        return "Algorithm{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", description='" + content + '\'' +
+                ", codeExample:" + codeExample +
+                '}';
+    }
 
     //Вывод минимальной информации
-    public static String minToString(String id, String name){
+    public String minToString(String id, String name){
         return id + " " + name;
     }
 
