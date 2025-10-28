@@ -9,6 +9,11 @@ public class Algoritm {
     private String content;
     private String codeExample;
 
+    //Пустой конструктор для spring
+    public Algoritm() {
+
+    }
+
     //Конструктор класса - его создание
     public Algoritm(long id, String name, String category, String content, String codeExample){
         this.id = id;
@@ -53,9 +58,10 @@ public class Algoritm {
         this.codeExample = codeExample;
     }
 
+    //TODO олноценный тустринг
 
     //Вывод минимальной информации
-    public static String tooString(String id, String name){
+    public static String minToString(String id, String name){
         return id + " " + name;
     }
 
