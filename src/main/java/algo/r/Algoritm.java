@@ -1,13 +1,16 @@
 package algo.r;
 
+import java.util.UUID;
+
 public class Algoritm {
 
     //Поля класса
-    private long id;
+    private String id;
     private String name;
     private String category;
     private String content;
     private String codeExample;
+    private String tag;
 
     //Пустой конструктор для spring
     public Algoritm() {
@@ -15,17 +18,18 @@ public class Algoritm {
     }
 
     //Конструктор класса - его создание
-    public Algoritm(long id, String name, String category, String content, String codeExample){
-        this.id = id;
+    public Algoritm(String name, String category, String content, String codeExample, String tag){
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.category = category;
         this.content = content;
         this.codeExample = codeExample;
+        this.tag = tag;
     }
 
     //Геттеры
     //передавать аргумент не нужно
-    public long getId(){
+    public String getId(){
         return id;
     }
     public String getName(){
@@ -40,9 +44,12 @@ public class Algoritm {
     public String getCodeExample(){
         return codeExample;
     }
+    public String getTag(){
+        return tag;
+    }
 
     //Сеттеры
-    public void setId(long id){ this.id = id; }
+    public void setId(String id){ this.id = id; }
     public void setName(String name){
         this.name = name;
     }
@@ -55,6 +62,9 @@ public class Algoritm {
     public void setCodeExample(String codeExample){
         this.codeExample = codeExample;
     }
+    public void setTag(String tag){
+        this.tag = tag;
+    }
 
 
     //
@@ -65,12 +75,13 @@ public class Algoritm {
                 ", category='" + category + '\'' +
                 ", description='" + content + '\'' +
                 ", codeExample:" + codeExample +
+                ", tag: " + tag +
                 '}';
     }
 
     //Вывод минимальной информации
     public String minToString(String id, String name){
-        return id + " " + name;
+        return tag + " " + name;
     }
 
 }
